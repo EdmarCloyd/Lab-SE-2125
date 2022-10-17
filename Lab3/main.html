@@ -16,24 +16,19 @@
         <div class="container" id="listButton">
             <div class="card" style="width: 20rem;">
                 <div class="card-header text-end">
-                    <button type="submit" class="btn btn-primary text-right" id="addPeople"
-                        onclick="addPeople()">Add</button>
+                    <button type="button" class="btn btn-primary text-right" id="addPeople" onclick="addPeople()">Add</button>
                 </div>
-
                 <div class="card-header">People</div>
                 <ul class="list-group" id="peopleList">
                     <li class="list-group-item">Michael Jordan</li>
                     <li class="list-group-item">Lebron James</li>
-                    <li class="list-group-item">Trae Young</li>
+                    <li class="list-group-item">Trae Young</li> 
                 </ul>
             </div>
         </div>
 
-
-
-
         <div style="display: none" class="container" id="peopleSection">
-            <div class="card" style="width: 25rem;">
+            <div class="card" style="width: 20rem;">
                 <div class="card-body">
                     <div class="name mb-4">
                         <label>First Name</label>
@@ -44,10 +39,8 @@
                         <input type="last" class="form-control" id="lastName" placeholder="Last Name" />
                     </div>
                     <div class="button text-end">
-                        <button type="cancel" class="btn btn-secondary" id="cancelBtn"
-                            onclick="cancelBtn()">Cancel</button>
-                        <button type="save" class="btn btn-primary text-right" id="saveBtn"
-                            onclick="saveBtn()">Save</button>
+                        <button type="cancel" class="btn btn-secondary text-right" id="cancelBtn" onclick="cancelBtn()">Cancel</button>
+                        <button type="save" class="btn btn-primary text-right" id="saveBtn" onclick="saveBtn()">Save</button>
                     </div>
                 </div>
             </div>
@@ -70,8 +63,9 @@
     }
 
     function cancelBtn() {
-        listButton.style.display = "block";
         peopleSection.style.display = "none";
+        listButton.style.display = "block";
+       
 
     }
 
@@ -79,17 +73,12 @@
         let nameFirst = firstName.value;
         let nameLast = lastName.value;
 
-        let li = document.createElement('li');
-        li.className = 'list-group-item';
-        li.appendChild(document.createTextNode(nameFirst + ' ' + nameLast));
-        listOfPeople.appendChild(li);
+        let list = document.createElement('li');
+        list.className = 'list-group-item';
+        list.appendChild(document.createTextNode(nameFirst + ' ' + nameLast));
+        listOfPeople.appendChild(list);
         peopleSection.style.display = "none";
         sectionList.style.display = "block";
     }
-
-
-
-
 </script>
-
 </html>
